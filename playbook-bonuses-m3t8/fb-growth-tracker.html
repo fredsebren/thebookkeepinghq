@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Facebook Growth Tracker — SixFigureBookkeeper</title>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #8B8173;
+    --accent-deep: #635A4C;
+    --accent-wash: #E9E4D9;
+    --olive: #6E7350;
+    --camel: #C2A06A;
+    --bg: #F2ECDF;
+    --surface: #FBF7EE;
+    --border: rgba(42,37,30,0.12);
+    --text: #2A251E;
+    --muted: #6E665A;
+    --faint: #A39A8B;
+  }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .brand-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+  }
+
+  .page-title {
+    font-family: 'Zilla Slab', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+
+  .page-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.125rem;
+  }
+
+  .stat-card.accent {
+    background: var(--accent);
+    border-color: var(--accent-deep);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .stat-card.accent .stat-label {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .stat-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat-card.accent .stat-value {
+    color: #fff;
+  }
+
+  .stat-input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    line-height: 1;
+  }
+
+  .stat-input::-webkit-inner-spin-button,
+  .stat-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 1rem;
+  }
+
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .task:last-child { border-bottom: none; }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 7px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    background: var(--bg);
+  }
+
+  .checkbox.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .checkmark {
+    display: none;
+    width: 12px;
+    height: 12px;
+  }
+
+  .checkbox.checked .checkmark { display: block; }
+
+  .task-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.15s;
+    line-height: 1.4;
+  }
+
+  .task-label.done {
+    color: var(--faint);
+    text-decoration: line-through;
+  }
+
+  .week-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .week-row:last-child { border-bottom: none; }
+
+  .day-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    width: 36px;
+    flex-shrink: 0;
+  }
+
+  .day-name.today { color: var(--accent-deep); }
+
+  .day-pill {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--faint);
+    flex-shrink: 0;
+    transition: all 0.15s;
+    background: var(--bg);
+  }
+
+  .day-pill.done {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .day-pill.today-marker {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+  }
+
+  .bar-wrap {
+    flex: 1;
+    height: 5px;
+    background: var(--accent-wash);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .progress-row:last-child { margin-bottom: 0; }
+
+  .progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    width: 70px;
+    flex-shrink: 0;
+  }
+
+  .progress-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    flex-shrink: 0;
+    width: 90px;
+    text-align: right;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--faint);
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .reset-link {
+    font-size: 11px;
+    color: var(--faint);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Public Sans', sans-serif;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .week-note {
+    font-size: 12px;
+    color: var(--faint);
+    margin-top: 0.75rem;
+    font-weight: 500;
+  }
+
+  .week-note.perfect { color: var(--olive); }
+
+  .today-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--accent-wash);
+    color: var(--accent-deep);
+    border-radius: 5px;
+    padding: 2px 6px;
+    margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <span class="brand-name">SixFigureBookkeeper</span>
+  </div>
+
+  <h1 class="page-title">Facebook Growth Tracker</h1>
+  <p class="page-sub">Fifteen minutes a day. Check the boxes, watch your network grow.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Total friends</div>
+      <input class="stat-input" type="number" id="totalFriends" value="0" min="0" max="5000" />
+    </div>
+    <div class="stat-card accent">
+      <div class="stat-label">Room to grow</div>
+      <div class="stat-value" id="roomLeft">5,000</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Client inquiries</div>
+      <input class="stat-input" type="number" id="inquiries" value="0" min="0" />
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Day streak</div>
+      <div class="stat-value" id="streakCount">0</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Today's checklist</div>
+
+    <div class="task" onclick="toggle('cancel')">
+      <div class="checkbox" id="cb-cancel">
+        <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="task-label" id="tx-cancel">Cancel requests older than 5 days</span>
+    </div>
+
+    <div class="task" onclick="toggle('add')">
+      <div class="checkbox" id="cb-add">
+        <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="task-label" id="tx-add">Send 50 friend requests (group members with things in common)</span>
+    </div>
+
+    <div class="task" onclick="toggle('post')">
+      <div class="checkbox" id="cb-post">
+        <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="task-label" id="tx-post">Post one piece of content</span>
+    </div>
+
+    <div class="task" onclick="toggle('notify')">
+      <div class="checkbox" id="cb-notify">
+        <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="task-label" id="tx-notify">Evening: check notifications, reply to comments and messages</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">This week</div>
+    <div id="weekRows"></div>
+    <div class="week-note" id="weekNote"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Progress</div>
+    <div class="progress-row">
+      <span class="progress-label">Friends</span>
+      <div class="bar-wrap"><div class="bar-fill" id="friendBar"></div></div>
+      <span class="progress-num" id="friendBarLabel">0 / 5,000</span>
+    </div>
+    <div class="progress-row">
+      <span class="progress-label">Inquiries</span>
+      <div class="bar-wrap"><div class="bar-fill" id="inquiryBar"></div></div>
+      <span class="progress-num" id="inquiryBarLabel">0 / 10</span>
+    </div>
+  </div>
+
+  <button class="reset-link" onclick="resetToday()">Reset today's checklist</button>
+
+  <div class="footer-note">Data saves in your browser. Tap friend / inquiry numbers to update them.</div>
+
+</div>
+
+<script>
+const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const FRIEND_CAP = 5000;
+const INQUIRY_GOAL = 10;
+
+function load() {
+  const raw = localStorage.getItem('sfb-fb-tracker');
+  if (!raw) return defaultState();
+  try { return JSON.parse(raw); } catch(e) { return defaultState(); }
+}
+
+function defaultState() {
+  return {
+    checks: { cancel: false, add: false, post: false, notify: false },
+    weekDays: [false,false,false,false,false,false,false],
+    streak: 0,
+    totalFriends: 0,
+    inquiries: 0,
+    lastReset: null
+  };
+}
+
+let state = load();
+
+function save() {
+  localStorage.setItem('sfb-fb-tracker', JSON.stringify(state));
+}
+
+function toggle(key) {
+  state.checks[key] = !state.checks[key];
+  render();
+  save();
+}
+
+function toggleDay(i) {
+  state.weekDays[i] = !state.weekDays[i];
+  state.streak = state.weekDays.filter(Boolean).length;
+  render();
+  save();
+}
+
+function resetToday() {
+  state.checks = { cancel: false, add: false, post: false, notify: false };
+  render();
+  save();
+}
+
+function render() {
+  ['cancel','add','post','notify'].forEach(k => {
+    const cb = document.getElementById('cb-' + k);
+    const tx = document.getElementById('tx-' + k);
+    cb.className = 'checkbox' + (state.checks[k] ? ' checked' : '');
+    tx.className = 'task-label' + (state.checks[k] ? ' done' : '');
+  });
+
+  const friends = parseInt(document.getElementById('totalFriends').value) || 0;
+  const inquiries = parseInt(document.getElementById('inquiries').value) || 0;
+
+  document.getElementById('roomLeft').textContent = Math.max(0, FRIEND_CAP - friends).toLocaleString();
+  document.getElementById('streakCount').textContent = state.streak;
+
+  document.getElementById('friendBar').style.width = Math.min(100, (friends / FRIEND_CAP) * 100) + '%';
+  document.getElementById('friendBarLabel').textContent = friends.toLocaleString() + ' / 5,000';
+  document.getElementById('inquiryBar').style.width = Math.min(100, (inquiries / INQUIRY_GOAL) * 100) + '%';
+  document.getElementById('inquiryBarLabel').textContent = inquiries + ' / ' + INQUIRY_GOAL;
+
+  const today = new Date().getDay();
+  const wrap = document.getElementById('weekRows');
+  wrap.innerHTML = '';
+  DAYS.forEach((d, i) => {
+    const isToday = i === today;
+    const isDone = state.weekDays[i];
+    const row = document.createElement('div');
+    row.className = 'week-row';
+    row.onclick = () => toggleDay(i);
+
+    const pillClass = isDone ? 'day-pill done' : (isToday ? 'day-pill today-marker' : 'day-pill');
+    const nameClass = isToday ? 'day-name today' : 'day-name';
+    const badge = isToday ? '<span class="today-badge">today</span>' : '';
+
+    row.innerHTML = `
+      <span class="${nameClass}">${d}</span>
+      <div class="${pillClass}">${isDone ? '✓' : ''}</div>
+      <div class="bar-wrap"><div class="bar-fill" style="width:${isDone ? '100' : '0'}%"></div></div>
+      ${badge}
+    `;
+    wrap.appendChild(row);
+  });
+
+  const done = state.weekDays.filter(Boolean).length;
+  const note = document.getElementById('weekNote');
+  note.textContent = done === 7
+    ? 'Perfect week. Keep going.'
+    : done + ' of 7 days complete this week';
+  note.className = 'week-note' + (done === 7 ? ' perfect' : '');
+}
+
+document.getElementById('totalFriends').addEventListener('input', e => {
+  state.totalFriends = parseInt(e.target.value) || 0;
+  render(); save();
+});
+
+document.getElementById('inquiries').addEventListener('input', e => {
+  state.inquiries = parseInt(e.target.value) || 0;
+  render(); save();
+});
+
+document.getElementById('totalFriends').value = state.totalFriends;
+document.getElementById('inquiries').value = state.inquiries;
+
+render();
+</script>
+
+</body>
+</html>

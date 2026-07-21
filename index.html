@@ -493,10 +493,7 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
 .tcard cite span{ color:var(--muted); font-weight:400; }
 
 /* live widget placeholder */
-.widget-slot{
-  margin-top:2.5rem; border:1px dashed var(--line); border-radius:var(--radius);
-  padding:1.2rem; text-align:center; color:var(--muted); font-size:.9rem; background:var(--paper-2);
-}
+.widget-slot{ margin-top:2.5rem; }
 
 /* =========================== CLASIFI =========================== */
 .clasifi{ background:var(--ink); color:var(--on-dark); position:relative; overflow:hidden; }
@@ -961,9 +958,9 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
            your live Google reviews flowing in automatically. Until then,
            the four curated reviews above carry the section.
            ============================================================ -->
-      <!-- To show live Google reviews: paste a Trustindex / Elfsight embed snippet
-           inside this div and remove the style="display:none" attribute. -->
-      <div class="widget-slot reveal" id="google-reviews-widget" style="display:none">
+      <!-- Live Google reviews via Trustindex (connected 2026-07-21) -->
+      <div class="widget-slot reveal" id="google-reviews-widget">
+        <script defer async src='https://cdn.trustindex.io/loader.js?6c0675077367348ada062224fa8'></script>
       </div>
     </div>
   </section>

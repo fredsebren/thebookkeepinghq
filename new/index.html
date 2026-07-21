@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bookkeeping for New Businesses — $75/month | The Bookkeeping HQ</title>
+
+<meta name="description" content="You just started a business. Get your books set up right from day one — $75/month for your first six months. Dana Sebren, Deloitte-trained, 18 years of experience. Book a free 15-minute call." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0B0F0D" />
+<link rel="canonical" href="https://thebookkeepinghq.com/new/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Bookkeeping HQ" />
+<meta property="og:title" content="Bookkeeping for New Businesses — $75/month" />
+<meta property="og:description" content="Bookkeeping set up right from day one. $75/month for your first six months. Book a free 15-minute call with Dana." />
+<meta property="og:url" content="https://thebookkeepinghq.com/new/" />
+<meta property="og:image" content="https://thebookkeepinghq.com/images/logo.png" />
+
+<link rel="icon" type="image/png" href="../images/logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "The Bookkeeping HQ",
+  "url": "https://thebookkeepinghq.com/new/",
+  "telephone": "+1-281-436-7300",
+  "email": "dana@thebookkeepinghq.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2001 Timberloch Pl, Ste 500",
+    "addressLocality": "The Woodlands",
+    "addressRegion": "TX",
+    "postalCode": "77380",
+    "addressCountry": "US"
+  },
+  "founder": { "@type": "Person", "name": "Dana Sebren" },
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "New-business bookkeeping",
+    "price": "75",
+    "priceCurrency": "USD",
+    "description": "Monthly bookkeeping for brand-new businesses: $75/month for the first six months, up to 25 transactions a month."
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* =====================================================================
+   THE BOOKKEEPING HQ — /new — postcard landing page
+   Same design system as the main site: forest ink + paper + lime accent.
+   Mobile-first: base styles are the phone layout.
+   ===================================================================== */
+
+:root{
+  --ink:        #0B0F0D;
+  --ink-soft:   #121814;
+  --ink-line:   #232b26;
+  --paper:      #F6F7F3;
+  --paper-2:    #EFF1EB;
+  --card:       #FFFFFF;
+  --text:       #1A201C;
+  --muted:      #59635C;
+  --line:       #E3E5DE;
+  --accent:     #5BE817;
+  --accent-ink: #2F8A07;
+  --on-dark:    #ECEFE8;
+  --on-dark-mut:#9AA39B;
+
+  --maxw: 1060px;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --radius: 14px;
+
+  --ff-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --ff-body: "Hanken Grotesk", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --fs-eyebrow: 0.74rem;
+  --fs-body:    1.0625rem;
+  --fs-lead:    clamp(1.15rem, 1.6vw, 1.35rem);
+  --fs-h3:      clamp(1.25rem, 2.2vw, 1.65rem);
+  --fs-h2:      clamp(1.9rem, 4.6vw, 3rem);
+  --fs-h1:      clamp(2.2rem, 6.5vw, 4.2rem);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  font-family:var(--ff-body);
+  font-size:var(--fs-body);
+  line-height:1.7;
+  color:var(--text);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"liga" 0,"dlig" 0,"calt" 0; font-variant-ligatures:none;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  /* room for the sticky mobile CTA bar */
+  padding-bottom:76px;
+}
+@media(min-width:760px){ body{ padding-bottom:0; } }
+
+h1,h2,h3,h4{
+  font-family:var(--ff-display);
+  font-feature-settings:"liga" 0,"dlig" 0,"calt" 0; font-variant-ligatures:none;
+  font-weight:700;
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  margin:0;
+  color:var(--ink);
+}
+p{ margin:0 0 1.1em; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+.wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter); }
+.section{ padding-block:clamp(3.5rem, 9vw, 7rem); position:relative; }
+.section--dark{ background:var(--ink); color:var(--on-dark); }
+.section--dark h2,.section--dark h3{ color:var(--on-dark); }
+.section--alt{ background:var(--paper-2); }
+
+.dot{ color:var(--accent); }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-size:var(--fs-eyebrow); font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted); margin:0 0 1.3rem;
+}
+.eyebrow::before{
+  content:""; width:7px; height:7px; border-radius:50%;
+  background:var(--accent); flex:none;
+  box-shadow:0 0 0 4px rgba(91,232,23,.16);
+}
+.section--dark .eyebrow{ color:var(--on-dark-mut); }
+
+.lead{ font-size:var(--fs-lead); line-height:1.55; }
+
+/* ---- buttons ---- */
+.btn{
+  --bg:var(--accent); --fg:#06210A;
+  display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  font-family:var(--ff-body); font-weight:600; font-size:.98rem; letter-spacing:.01em;
+  padding:.95rem 1.5rem; border-radius:100px;
+  background:var(--bg); color:var(--fg);
+  border:1px solid transparent;
+  cursor:pointer; transition:transform .25s ease, box-shadow .25s ease;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+.btn .arr{ transition:transform .25s ease; }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -12px rgba(91,232,23,.6); }
+.btn:hover .arr{ transform:translateX(4px); }
+.btn--ghost{ --bg:transparent; --fg:var(--ink); border-color:var(--line); box-shadow:none; }
+.btn--ghost:hover{ border-color:var(--accent); box-shadow:none; }
+.hero .btn--ghost,.section--dark .btn--ghost{ --fg:var(--on-dark); border-color:var(--ink-line); }
+
+a:focus-visible,.btn:focus-visible{
+  outline:3px solid var(--accent); outline-offset:3px; border-radius:6px;
+}
+
+.skip{
+  position:absolute; left:-999px; top:0; z-index:200;
+  background:var(--accent); color:#06210A; padding:.7rem 1.1rem;
+  border-radius:0 0 10px 0; font-weight:700;
+}
+.skip:focus{ left:0; }
+
+/* =========================== HEADER =========================== */
+.header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(11,15,13,.92);
+  backdrop-filter:saturate(140%) blur(12px);
+  -webkit-backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid var(--ink-line);
+}
+.header__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; padding-block:.85rem;
+}
+.brand img{ height:26px; width:auto; }
+@media(min-width:760px){ .brand img{ height:32px; } }
+.header__call{
+  font-size:.92rem; font-weight:600; color:var(--on-dark);
+  display:inline-flex; align-items:center; gap:.5rem;
+}
+.header__call .dot-ic{ width:7px;height:7px;border-radius:50%;background:var(--accent); }
+.header__call:hover{ color:var(--accent); }
+
+/* =========================== HERO =========================== */
+.hero{
+  background:var(--ink); color:var(--on-dark);
+  position:relative; overflow:hidden;
+  padding-block:clamp(3.5rem, 10vw, 7.5rem);
+}
+.hero::before{
+  content:""; position:absolute; right:-15%; top:-25%;
+  width:75vw; height:75vw; max-width:720px; max-height:720px;
+  background:radial-gradient(circle, rgba(91,232,23,.16), rgba(91,232,23,0) 62%);
+  pointer-events:none;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background-image:linear-gradient(var(--ink-line) 1px, transparent 1px), linear-gradient(90deg, var(--ink-line) 1px, transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(circle at 30% 20%, #000, transparent 75%);
+  mask-image:radial-gradient(circle at 30% 20%, #000, transparent 75%);
+}
+.hero .wrap{ position:relative; z-index:2; }
+.hero__inner{ max-width:800px; }
+.hero h1{
+  color:var(--on-dark); font-size:var(--fs-h1); letter-spacing:-0.03em;
+  margin:0 0 1.2rem;
+}
+.hero__sub{
+  font-size:var(--fs-lead); color:var(--on-dark); opacity:.92;
+  max-width:44ch; line-height:1.55; margin:0 0 2rem;
+}
+.hero__sub b{ color:#fff; }
+.hero__cta{ display:flex; flex-direction:column; gap:.9rem; align-items:stretch; }
+@media(min-width:560px){ .hero__cta{ flex-direction:row; align-items:center; } }
+.hero__trust{
+  margin-top:clamp(2.4rem,6vw,3.6rem);
+  padding-top:1.6rem; border-top:1px solid var(--ink-line);
+  display:flex; flex-wrap:wrap; gap:1.2rem 2.2rem; align-items:center;
+}
+.hero__trust .t-item{ display:flex; flex-direction:column; gap:.15rem; }
+.hero__trust .t-item b{ font-family:var(--ff-display); font-size:1.25rem; font-weight:500; color:#fff; letter-spacing:-.02em; }
+.hero__trust .t-item span{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--on-dark-mut); }
+
+/* =========================== WHO I AM =========================== */
+.bio__grid{ display:grid; gap:2.2rem; grid-template-columns:1fr; align-items:start; }
+@media(min-width:860px){ .bio__grid{ grid-template-columns:.8fr 1.2fr; gap:clamp(2.5rem,5vw,4rem); } }
+
+.bio__photo .frame{
+  position:relative; border-radius:18px; overflow:hidden;
+  box-shadow:0 40px 80px -40px rgba(11,15,13,.5);
+  border:1px solid var(--line);
+  max-width:420px;
+}
+.bio__photo img{ width:100%; height:auto; }
+.bio__photo .tag{
+  position:absolute; left:1rem; bottom:1rem;
+  background:rgba(11,15,13,.86); color:var(--on-dark);
+  backdrop-filter:blur(6px); padding:.65rem 1rem; border-radius:12px;
+  font-size:.82rem; line-height:1.35; border:1px solid var(--ink-line);
+}
+.bio__photo .tag b{ color:#fff; display:block; font-family:var(--ff-display); font-size:1.02rem; font-weight:500; }
+
+.bio__body h2{ font-size:var(--fs-h2); margin:0 0 1.2rem; }
+.bio__body p{ color:var(--text); }
+.bio__body .big{ font-size:var(--fs-lead); line-height:1.55; color:var(--ink); font-weight:500; }
+
+@media(min-width:860px){
+  .bio__photo{ position:sticky; top:96px; }
+}
+
+/* =========================== WHY $75 =========================== */
+.why .kicker{
+  border-left:3px solid var(--accent); padding-left:1.3rem; margin-top:1.6rem;
+}
+.why .kicker p{
+  font-family:var(--ff-display); font-style:italic; font-weight:400;
+  font-size:clamp(1.2rem,2.4vw,1.6rem); line-height:1.4; color:#fff; margin:0;
+}
+
+/* =========================== WHAT WAITING COSTS =========================== */
+.costs{ list-style:none; margin:2.2rem 0 0; padding:0; display:grid; gap:1.1rem; }
+@media(min-width:760px){ .costs{ grid-template-columns:1fr 1fr; gap:1.3rem; } }
+.costs li{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1.5rem 1.5rem 1.4rem;
+}
+.costs h3{ font-size:1.12rem; margin:0 0 .45rem; }
+.costs p{ margin:0; color:var(--muted); font-size:.99rem; }
+.costs__coda{ margin:2rem 0 0; color:var(--muted); font-size:1rem; max-width:60ch; }
+
+/* =========================== WHAT $75 COVERS =========================== */
+.covers__grid{ display:grid; gap:2rem; grid-template-columns:1fr; align-items:start; }
+@media(min-width:880px){ .covers__grid{ grid-template-columns:1.1fr .9fr; gap:clamp(2.5rem,5vw,4rem); } }
+
+.checks{ list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:.9rem; }
+.checks li{ display:grid; grid-template-columns:1.25em 1fr; gap:.55rem; align-items:start; line-height:1.55; }
+.checks li::before{ content:"✓"; color:var(--accent); font-weight:800; line-height:1.55; }
+.checks li b{ color:#fff; }
+
+.price-card{
+  background:linear-gradient(160deg, var(--ink-soft), #0d130f);
+  border:1px solid var(--ink-line); border-radius:20px;
+  padding:clamp(1.6rem,4vw,2.4rem);
+}
+.price-card .price{
+  font-family:var(--ff-display); font-size:clamp(2.6rem,6vw,3.6rem);
+  font-weight:600; color:#fff; letter-spacing:-.03em; line-height:1;
+}
+.price-card .price small{ font-family:var(--ff-body); font-size:1rem; color:var(--on-dark-mut); font-weight:400; }
+.price-card .cap{ margin:1.1rem 0 0; color:var(--on-dark); font-size:.98rem; }
+.price-card .cap b{ color:#fff; }
+.price-card .btn{ width:100%; margin-top:1.4rem; }
+
+.not-included{
+  margin-top:1.6rem; padding-top:1.4rem; border-top:1px solid var(--ink-line);
+  color:var(--on-dark-mut); font-size:.95rem;
+}
+.not-included b{ color:var(--on-dark); }
+
+/* =========================== AFTER SIX MONTHS =========================== */
+.after p{ max-width:62ch; }
+.after .note{
+  border-left:3px solid var(--accent); background:var(--paper-2);
+  border-radius:0 14px 14px 0; padding:1.3rem 1.5rem; margin:1.8rem 0 0;
+  max-width:62ch;
+}
+.after .note p{ margin:0; color:var(--text); }
+.after .note b{ color:var(--ink); }
+
+/* =========================== FIRST MONTH =========================== */
+.numlist{ list-style:none; counter-reset:n; margin:2rem 0 0; padding:0; }
+.numlist li{
+  counter-increment:n; display:grid; grid-template-columns:auto 1fr; gap:1.2rem;
+  align-items:start; padding:1.4rem 0; border-top:1px solid var(--line);
+}
+.numlist li:last-child{ border-bottom:1px solid var(--line); }
+.numlist li::before{
+  content:counter(n,decimal-leading-zero);
+  font-family:var(--ff-display); font-weight:600; font-size:1.6rem;
+  color:var(--accent-ink); line-height:1.2;
+}
+.numlist h3{ font-size:1.15rem; margin:0 0 .3rem; }
+.numlist p{ margin:0; color:var(--muted); }
+
+/* =========================== BOOK =========================== */
+.book .s-head{ max-width:62ch; }
+.book .s-head h2{ font-size:var(--fs-h2); margin:0 0 1rem; }
+.book .s-head p{ color:var(--muted); font-size:var(--fs-lead); line-height:1.5; }
+.book__alt{
+  margin-top:1.8rem; display:flex; flex-wrap:wrap; gap:.9rem; align-items:center;
+  color:var(--muted); font-size:1rem;
+}
+.book__alt a{ color:var(--accent-ink); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+.calendly-box{
+  margin-top:2rem; border:1px solid var(--line); border-radius:18px;
+  overflow:hidden; background:var(--card);
+}
+.calendly-inline-widget{ min-width:280px; height:1030px; }
+@media(min-width:760px){ .calendly-inline-widget{ height:760px; } }
+
+/* =========================== FOOTER =========================== */
+.footer{
+  background:var(--ink); color:var(--on-dark-mut);
+  padding-block:2.6rem; font-size:.92rem;
+}
+.footer .wrap{ display:grid; gap:1.4rem; }
+.footer img{ height:26px; width:auto; }
+.footer a{ color:var(--on-dark); }
+.footer a:hover{ color:var(--accent); }
+.footer .fine{ font-size:.84rem; }
+.footer .fine .dot{ color:var(--accent); }
+
+/* =========================== STICKY MOBILE CTA =========================== */
+.stickycta{
+  position:fixed; left:0; right:0; bottom:0; z-index:120;
+  display:flex; gap:.7rem; padding:.7rem var(--gutter);
+  padding-bottom:calc(.7rem + env(safe-area-inset-bottom, 0px));
+  background:rgba(11,15,13,.94);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--ink-line);
+  transform:translateY(0); transition:transform .35s ease;
+}
+.stickycta.hidden{ transform:translateY(110%); }
+.stickycta .btn{ flex:1; padding:.85rem 1rem; font-size:.95rem; }
+@media(min-width:760px){ .stickycta{ display:none; } }
+
+/* =========================== REVEAL MOTION =========================== */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal.d1{ transition-delay:.08s; }
+.reveal.d2{ transition-delay:.16s; }
+
+.hero [data-load]{ opacity:0; transform:translateY(22px); animation:heroIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero [data-load="1"]{ animation-delay:.1s; }
+.hero [data-load="2"]{ animation-delay:.24s; }
+.hero [data-load="3"]{ animation-delay:.38s; }
+.hero [data-load="4"]{ animation-delay:.54s; }
+@keyframes heroIn{ to{ opacity:1; transform:none; } }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms !important; animation-delay:0s !important; transition-duration:.001ms !important; }
+  .reveal{ opacity:1; transform:none; }
+  .hero [data-load]{ opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="https://thebookkeepinghq.com/" aria-label="The Bookkeeping HQ — home">
+      <img src="../images/logo.png" alt="The Bookkeeping HQ" width="1500" height="375" />
+    </a>
+    <a class="header__call" href="tel:+12814367300"><span class="dot-ic" aria-hidden="true"></span>(281) 436-7300</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="wrap">
+      <div class="hero__inner">
+        <p class="eyebrow" data-load="1">For brand-new business owners</p>
+        <h1 id="hero-h1" data-load="2">You just started a business. Let's keep your books from becoming a problem<span class="dot">.</span></h1>
+        <p class="hero__sub" data-load="3">Bookkeeping set up right from day one. <b>$75/month for your first six months.</b></p>
+        <div class="hero__cta" data-load="4">
+          <a class="btn" href="#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="tel:+12814367300">Call or text: (281) 436-7300</a>
+        </div>
+        <div class="hero__trust" data-load="4">
+          <div class="t-item"><b>18 yrs</b><span>Experience</span></div>
+          <div class="t-item"><b>Deloitte</b><span>Trained</span></div>
+          <div class="t-item"><b>QuickBooks</b><span>Advanced Certified</span></div>
+          <div class="t-item"><b>5.0 ★</b><span>Google Reviews</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHO I AM ============================ -->
+  <section class="section bio" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <div class="bio__grid">
+        <div class="bio__photo reveal">
+          <div class="frame">
+            <img src="../images/dana.jpg" alt="Dana Sebren, owner and bookkeeper at The Bookkeeping HQ" width="686" height="960" />
+            <div class="tag"><b>Dana Sebren<span class="dot">.</span></b>Owner &amp; Bookkeeper</div>
+          </div>
+        </div>
+        <div class="bio__body reveal d1">
+          <p class="eyebrow">Who I am</p>
+          <h2 id="who-h">Hi, I'm Dana<span class="dot">.</span></h2>
+          <p class="big">I've spent eighteen years doing one thing: keeping business finances in order. Here's how I got here, so you know who you'd be handing your books to.</p>
+          <p>I studied accounting at the University of Louisiana at Lafayette and went on to an internal-auditing program at LSU. From there I went into public accounting and landed at Deloitte in San Francisco, where I audited Fortune 500 companies — big international engagements where every number gets checked and checked again. After Deloitte I spent years inside a CPA firm doing tax work. All told, more than a decade in public accounting before I ever hung out my own shingle.</p>
+          <p>Then I became a business owner myself. My husband and I built an insurance agency from nothing, grew it, and sold it. We invested in real estate. And through all of it, I did our books — which taught me something no audit ever did: what it feels like when it's your own money, your own risk, and every dollar is spoken for. I don't just read your books like an accountant. I read them like an owner, because I've been one.</p>
+          <p>Today I run The Bookkeeping HQ from The Woodlands, Texas. It's a boutique practice on purpose — I personally handle every client. No junior team, no hand-off, no call center. My clients range from brand-new businesses to companies doing eight figures, from here in Texas to California and all the way to Europe. Whoever you are, you get me.</p>
+          <p>That's the experience behind the $75. Your books won't be a practice run for anyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY $75 ============================ -->
+  <section class="section section--dark why" aria-labelledby="why-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Why $75</p>
+      <h2 id="why-h" class="reveal" style="font-size:var(--fs-h2); max-width:22ch;">Priced for year one, on purpose<span class="dot">.</span></h2>
+      <div style="max-width:62ch;">
+        <p class="lead reveal d1" style="margin-top:1.4rem;">I know what it's like to start a business. Every dollar is spoken for, and bookkeeping feels like something you'll deal with later.</p>
+        <p class="reveal d1" style="opacity:.92;">That's why I made this $75. There's no point paying for expensive bookkeeping when you don't have the transaction volume to justify it. I'd rather start with you small and grow as you grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHAT WAITING COSTS ============================ -->
+  <section class="section section--alt waiting" aria-labelledby="wait-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">What waiting costs</p>
+      <h2 id="wait-h" class="reveal" style="font-size:var(--fs-h2); max-width:24ch;">Most new owners don't think about their books until the first tax deadline.</h2>
+      <p class="reveal d1" style="color:var(--muted); font-size:var(--fs-lead); line-height:1.5; max-width:54ch; margin-top:1rem;">Here's what that looks like when it arrives:</p>
+
+      <ul class="costs">
+        <li class="reveal"><h3>A year of cleanup runs into the thousands.</h3><p>Reconstructing twelve months of records from bank statements, receipts, and memory takes far longer than keeping them current, and you pay for every hour of it.</p></li>
+        <li class="reveal d1"><h3>Mixed business and personal accounts double the work.</h3><p>Every transaction has to be sorted by hand before anything can be reconciled. Most new owners run everything through one account for the first year without realizing what it costs later.</p></li>
+        <li class="reveal"><h3>Missing records can't be recovered.</h3><p>Receipts you didn't keep, transactions you can't identify, cash you can't account for. That's money you can't deduct.</p></li>
+        <li class="reveal d1"><h3>You make decisions blind.</h3><p>You can't tell what's actually profitable until someone puts the numbers in order.</p></li>
+      </ul>
+
+      <p class="costs__coda reveal">None of this happens because anyone did anything wrong. It happens because year one is busy and the books are the thing that waits.</p>
+    </div>
+  </section>
+
+  <!-- ============================ WHAT $75 COVERS ============================ -->
+  <section class="section section--dark covers" aria-labelledby="covers-h">
+    <div class="wrap">
+      <div class="covers__grid">
+        <div class="reveal">
+          <p class="eyebrow">What $75 covers</p>
+          <h2 id="covers-h" style="font-size:var(--fs-h2);">Everything a first-year business needs<span class="dot">.</span></h2>
+          <ul class="checks" style="color:var(--on-dark);">
+            <li>Your books <b>set up correctly from the start</b>: chart of accounts, categories, the structure that makes everything after it easy</li>
+            <li>Business and personal <b>separated properly</b></li>
+            <li>Your accounts <b>connected and reconciled</b> every month</li>
+            <li><b>Monthly financials</b> so you can see what's actually happening</li>
+            <li>Everything organized and <b>ready to hand your CPA</b> at tax time</li>
+          </ul>
+          <div class="not-included">
+            <b>What this doesn't include:</b> I don't file taxes or handle sales tax returns. I keep your books clean and hand your CPA everything they need. If you don't have one, I can point you to someone.
+          </div>
+        </div>
+        <div class="price-card reveal d1">
+          <div class="price">$75<span class="dot">.</span><small>/month · first six months</small></div>
+          <p class="cap">Covers up to <b>25 transactions a month</b>. Most brand-new businesses are well under that.</p>
+          <a class="btn" href="#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ AFTER SIX MONTHS ============================ -->
+  <section class="section after" aria-labelledby="after-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">What happens after six months</p>
+      <h2 id="after-h" class="reveal" style="font-size:var(--fs-h2); max-width:24ch;">No surprise jump. You'll know your number before it changes.</h2>
+      <div class="reveal d1" style="margin-top:1.4rem;">
+        <p>Here's my normal pricing: <b>$3 per transaction</b>. That's what an established business pays.</p>
+        <p>After six months we look at what your business actually looks like. If you're running 300 transactions a month, we'll talk about what that costs. If you're still small, you stay at $75 and we check in every quarter.</p>
+        <div class="note">
+          <p>And if you decide to take your business elsewhere after six months, that's fine. <b>Everything will be set up clean for whoever comes next.</b> I'd rather earn it every quarter than lock you into something.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FIRST MONTH ============================ -->
+  <section class="section section--alt month1" aria-labelledby="month1-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Getting started</p>
+      <h2 id="month1-h" class="reveal" style="font-size:var(--fs-h2); max-width:22ch;">What the first month looks like.</h2>
+      <ol class="numlist reveal d1">
+        <li><div><h3>We talk.</h3><p>Fifteen minutes. You tell me what your business does and how you're handling money right now. No commitment.</p></div></li>
+        <li><div><h3>I set up your books.</h3><p>Chart of accounts built around your business, accounts connected, everything structured properly from the start.</p></div></li>
+        <li><div><h3>You send me what you have.</h3><p>Receipts, statements, whatever exists. I'll tell you exactly what I need and how to get it to me.</p></div></li>
+        <li><div><h3>First month closed.</h3><p>You get your financials and a short note on what I'm seeing. Then we do it again next month.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================ BOOK A CALL ============================ -->
+  <section class="section book" id="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <div class="s-head reveal">
+        <p class="eyebrow">Book a call</p>
+        <h2 id="book-h">Fifteen minutes, no commitment<span style="color:var(--accent)">.</span></h2>
+        <p>Tell me what you're building and I'll tell you what setting it up right looks like.</p>
+      </div>
+      <div class="book__alt reveal d1">
+        <span>Prefer the phone? Call or text <a href="tel:+12814367300">(281) 436-7300</a>, or email <a href="mailto:dana@thebookkeepinghq.com">dana@thebookkeepinghq.com</a>.</span>
+      </div>
+      <div class="calendly-box reveal d1">
+        <!-- Calendly inline embed -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/dana-thebookkeepinghq/clasifi-onboarding?hide_gdpr_banner=1&primary_color=2f8a07" style="min-width:280px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <img src="../images/logo.png" alt="The Bookkeeping HQ" width="1500" height="375" />
+    <div>
+      <a href="mailto:dana@thebookkeepinghq.com">dana@thebookkeepinghq.com</a> · <a href="tel:+12814367300">(281) 436-7300</a><br />
+      2001 Timberloch Pl, Ste 500, The Woodlands, TX 77380
+    </div>
+    <div><a href="https://thebookkeepinghq.com/">thebookkeepinghq.com</a></div>
+    <div class="fine">© 2026 The Bookkeeping HQ LLC. All rights reserved<span class="dot">.</span></div>
+  </div>
+</footer>
+
+<!-- ============================ STICKY MOBILE CTA ============================ -->
+<div class="stickycta" id="stickycta">
+  <a class="btn" href="#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
+  <a class="btn btn--ghost" href="tel:+12814367300" style="--fg:var(--on-dark); border-color:var(--ink-line);">Call / text</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- scroll reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- hide sticky CTA when the booking section is on screen ---------- */
+  var bar = document.getElementById('stickycta');
+  var book = document.getElementById('book');
+  if(bar && book && 'IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        bar.classList.toggle('hidden', e.isIntersecting);
+      });
+    }, { threshold:0.08 });
+    io2.observe(book);
+  }
+})();
+</script>
+</body>
+</html>

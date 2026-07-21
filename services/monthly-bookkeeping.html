@@ -210,7 +210,7 @@ img{ max-width:100%; display:block; }
   border-color:var(--line);
   box-shadow:none;
 }
-.section--dark .btn--ghost,.hero .btn--ghost,.subhero .btn--ghost,.clasifi .btn--ghost{ --fg:var(--on-dark); border-color:var(--ink-line); }
+.section--dark .btn--ghost,.hero .btn--ghost,.subhero .btn--ghost{ --fg:var(--on-dark); border-color:var(--ink-line); }
 .btn--ghost:hover{ border-color:var(--accent); box-shadow:none; }
 
 /* visible focus everywhere */
@@ -498,28 +498,6 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
   padding:1.2rem; text-align:center; color:var(--muted); font-size:.9rem; background:var(--paper-2);
 }
 
-/* =========================== CLASIFI =========================== */
-.clasifi{ background:var(--ink); color:var(--on-dark); position:relative; overflow:hidden; }
-.clasifi::before{
-  content:""; position:absolute; right:-10%; top:-15%;
-  width:48vw;height:48vw;max-width:560px;max-height:560px;
-  background:radial-gradient(circle, rgba(91,232,23,.14), transparent 60%);
-}
-.clasifi .wrap{ position:relative; z-index:1; }
-.clasifi__grid{ display:grid; gap:clamp(2rem,5vw,4rem); grid-template-columns:1fr; align-items:center; }
-@media(min-width:860px){ .clasifi__grid{ grid-template-columns:1.15fr .85fr; } }
-.clasifi h2{ font-size:var(--fs-h2); color:var(--on-dark); }
-.clasifi p{ color:var(--on-dark); opacity:.92; }
-.clasifi__card{
-  background:linear-gradient(160deg, var(--ink-soft), #0d130f);
-  border:1px solid var(--ink-line); border-radius:20px; padding:clamp(1.8rem,4vw,2.6rem);
-}
-.clasifi__card .price{ font-family:var(--ff-display); font-size:clamp(2.4rem,5vw,3.4rem); font-weight:600; color:#fff; letter-spacing:-.03em; }
-.clasifi__card .price .dot{ color:var(--accent); }
-.clasifi__card .price small{ font-family:var(--ff-body); font-size:1rem; color:var(--on-dark-mut); font-weight:400; }
-.clasifi__card ul{ list-style:none; margin:1.4rem 0 1.8rem; padding:0; display:grid; gap:.7rem; }
-.clasifi__card li{ display:flex; gap:.7rem; align-items:flex-start; color:var(--on-dark); font-size:.98rem; }
-.clasifi__card li::before{ content:""; width:7px;height:7px;border-radius:50%;background:var(--accent); margin-top:.55rem; flex:none; }
 
 /* =========================== FAQ =========================== */
 .faq__grid{ display:grid; gap:clamp(2rem,5vw,4rem); grid-template-columns:1fr; }
@@ -756,7 +734,6 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
     <a href="../index.html#locations">Locations</a>
     <a href="../index.html#reviews">Reviews</a>
     <a href="../index.html#faq">FAQ</a>
-    <a href="../index.html#clasifi">Clasifi</a>
     <a href="../index.html#contact">Contact</a>
     <a class="btn" href="https://calendly.com/dana-thebookkeepinghq/30min" target="_blank" rel="noopener">Schedule a Consultation <span class="arr" aria-hidden="true">→</span></a>
   </nav>
@@ -930,29 +907,6 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
     </div>
   </section>
 
-<section class="section clasifi" id="clasifi" aria-labelledby="clasifi-h">
-    <div class="wrap">
-      <div class="clasifi__grid">
-        <div class="reveal">
-          <p class="eyebrow">A tool she built</p>
-          <h2 id="clasifi-h">The story behind Clasifi<span class="dot">.</span></h2>
-          <p>Over the years, Dana kept meeting solo business owners paying hundreds a month for full-service bookkeeping they didn't really need — straightforward books that simply didn't justify the cost.</p>
-          <p>So she built Clasifi: the same clean, categorized books, done in minutes for $39/month instead of hours for hundreds. For businesses that need a true partner, Dana still takes select full-service clients. For everyone else, there's now a tool she's genuinely proud to point them to.</p>
-          <a class="btn" href="https://tryclasifi.com" target="_blank" rel="noopener">Explore Clasifi — bookkeeping software for the self-employed <span class="arr" aria-hidden="true">→</span></a>
-        </div>
-        <div class="clasifi__card reveal d1">
-          <div class="price">$39<span class="dot">.</span><small>/month</small></div>
-          <ul>
-            <li>Clean, categorized books in minutes</li>
-            <li>Built for the self-employed &amp; solo owners</li>
-            <li>The same standards Dana holds her clients to</li>
-            <li>No hourly fees, no enterprise markup</li>
-          </ul>
-          <a class="btn btn--ghost" href="https://tryclasifi.com" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Visit tryclasifi.com <span class="arr" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================ FINAL CTA ============================ -->
   <section class="section section--dark" aria-labelledby="cta-h">
@@ -972,7 +926,7 @@ input:focus-visible,textarea:focus-visible,summary:focus-visible,
         <img class="logo" src="../images/logo.png" alt="The Bookkeeping HQ" width="1500" height="375" />
         <p>Boutique bookkeeping from The Woodlands, TX — serving owner-operated businesses from California to Europe. Fortune-500-caliber books, kept refreshingly simple.</p>
         <div class="footer__social">
-          <a href="https://www.facebook.com/Clasifi" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.facebook.com/thebookkeepinghq" target="_blank" rel="noopener" aria-label="Facebook">f</a>
           <a href="https://share.google/7cRG9RoF6WmevcWAT" target="_blank" rel="noopener" aria-label="Google profile">G</a>
         </div>
       </div>
